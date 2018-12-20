@@ -13,7 +13,7 @@ aws dynamodb create-table --table-name games \
   --region ap-southeast-2 \
   --query TableDescription.TableArn --output text
   
-claudia create --region us-east-1 --api-module index --policies policy
+claudia create --region ap-southeast-2 --api-module index --policies policy
   
 curl https://your-service-url.execute-api.us-east-1.amazonaws.com/latest/games
   
