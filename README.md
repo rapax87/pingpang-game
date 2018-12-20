@@ -2,6 +2,10 @@
 
 npm install -g claudia
 
+npm init -f
+
+npm install aws-sdk claudia-api-builder -S
+
 aws dynamodb create-table --table-name games \
   --attribute-definitions AttributeName=gameid,AttributeType=S \
   --key-schema AttributeName=gameid,KeyType=HASH \
