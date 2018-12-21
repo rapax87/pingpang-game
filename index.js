@@ -10,8 +10,9 @@ api.post('/' + entity, function (request) { // SAVE your game
 			TableName: entity,
 				Item: {
 					id: request.body.id,
-					date: request.body.date, // your game date
-					players: request.body.players
+					team1: request.body.team1, // your game date
+					team2: request.body.team2,
+					prediction: request.body.prediction
 			}
 		};
 		return dynamoDb.put(parameters).promise(); // returns dynamo result
@@ -27,8 +28,9 @@ api.patch('/' + entity + '/{id}', (request) => { //PATCH your game
 		TableName: entity,
 		Item: {
 			id: request.pathParams.id,
-			date: request.body.date, //your game date
-			players: request.body.players
+			team1: request.body.team1, //your game date
+			team2: request.body.team2,
+			prediction: request.body.prediction
 		}
 	};
 	return dynamoDb.put(params).promise();
